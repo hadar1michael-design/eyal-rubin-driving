@@ -448,6 +448,13 @@
             <input type="radio" name="gear" id="g2" value="ידני"><label for="g2">ידני</label>
           </div>
         </fieldset>
+        <fieldset>
+          <legend>עברת כבר תאוריה?</legend>
+          <div class="seg">
+            <input type="radio" name="theory" id="t1" value="yes"><label for="t1">כן</label>
+            <input type="radio" name="theory" id="t2" value="no"><label for="t2">עוד לא</label>
+          </div>
+        </fieldset>
         <div class="err" id="err" role="alert">חסר שם. מה השם שלך?</div>
         <button class="btn btn-primary" type="submit"><svg class="wa-icon" aria-hidden="true"><use href="#i-wa"/></svg>שליחה בוואטסאפ</button>
         <p class="form-note">הפרטים נשלחים רק לאייל, בלי רשימות תפוצה.</p>
@@ -526,7 +533,8 @@ form.addEventListener("submit", e => {
   if (!name) { err.style.display = "block"; form.name.setAttribute("aria-invalid", "true"); form.name.focus(); return; }
   err.style.display = "none"; form.name.removeAttribute("aria-invalid");
   const where = form.where.value.trim();
-  const msg = `היי אייל, אני ${name}. אשמח לקבוע שיעור ראשון` + (where ? ` (איסוף מ${where})` : "") + `, על ${form.gear.value}.`;
+  const msg = `היי אייל, אני ${name}. אשמח לקבוע שיעור ראשון` + (where ? ` (איסוף מ${where})` : "") + `, על ${form.gear.value}.`
+    + ({ yes: " עברתי תאוריה.", no: " עוד לא עברתי תאוריה." }[form.theory.value] || "");
   window.open(waLink(msg), "_blank", "noopener");
 });
 form.name.addEventListener("input", () => { if (form.name.value.trim()) { err.style.display = "none"; form.name.removeAttribute("aria-invalid"); } });
