@@ -159,6 +159,28 @@
   .pass.more .who{border-color:rgba(255,255,255,.12)}
   .pass.more .who small{color:var(--muted-dark)}
   .pass.more .av{background:var(--line);color:var(--ink)}
+  /* google reviews */
+  .stars{display:inline-flex;gap:2px;color:var(--line)}
+  .stars svg{width:16px;height:16px}
+  .g-rate{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:-8px 0 26px;color:#fff;text-decoration:none;font-size:15.5px}
+  .g-rate b{font-weight:900;font-size:18px}
+  .g-rate .c{color:var(--muted-dark);border-bottom:1px solid rgba(255,255,255,.28);transition:color .2s,border-color .2s}
+  .g-rate:hover .c{color:#fff;border-color:var(--line)}
+  .rev-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+  .rev-head .sec-head{margin-bottom:0}
+  .score{display:grid;grid-template-columns:auto auto;align-items:center;gap:2px 16px;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);padding:18px 24px;transition:border-color .2s, transform .3s var(--ease)}
+  .score:hover{border-color:var(--line-deep);transform:translateY(-2px)}
+  .score-num{grid-row:span 2;font-size:52px;font-weight:900;line-height:1;letter-spacing:-.03em}
+  .score .stars svg{width:20px;height:20px}
+  .score small{color:var(--muted);font-size:14.5px;font-weight:500}
+  .reviews{columns:3 280px;column-gap:20px}
+  .rev{break-inside:avoid;margin:0 0 20px;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);padding:26px 26px 22px}
+  .rev blockquote{font-size:17.5px;margin:14px 0 18px;color:#2b2f37}
+  .rev figcaption{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15.5px;padding-top:16px;border-top:1px solid var(--rule)}
+  .rev figcaption small{display:block;color:var(--muted);font-weight:500;font-size:14px}
+  .rev .av{width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--rule);display:grid;place-items:center;font-weight:900;flex:none}
+  .ig-head{margin:88px 0 36px}
+  .ig-head h3{font-size:clamp(24px,2.8vw,32px);font-weight:900;line-height:1.15;margin-bottom:8px}
   .google-link{display:inline-flex;align-items:center;gap:8px;margin-top:30px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--line)}
 
   /* faq */
@@ -215,6 +237,8 @@
     .steps-head{position:static}
     .portrait{margin-bottom:64px}
     .passed{grid-template-columns:1fr}
+    .rev-head{margin-bottom:40px}
+    .ig-head{margin-top:64px}
     .why-list{grid-template-columns:1fr;margin-top:64px}
     .fear{grid-template-columns:1fr;gap:10px}
     section{padding:80px 0}
@@ -234,6 +258,7 @@
     .route::before{right:15px}
     .route::after{right:25px}
     form.lead{padding:24px}
+    .rev:nth-child(n+5){display:none}
   }
 </style>
 </head>
@@ -249,6 +274,7 @@
     <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></g></symbol>
     <symbol id="i-tt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.6 2.3 4.4 5 4.7"/></symbol>
@@ -278,6 +304,7 @@
           </a>
           <a class="btn btn-ghost" href="#how">איך מתחילים?</a>
         </div>
+        <a class="g-rate" data-google target="_blank" rel="noopener"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><b data-f="googleRating">5.0</b><span class="c"><span data-f="googleCount">21</span> ביקורות בגוגל</span></a>
         <ul class="hero-trust">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>מורה מוסמך</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>ידני ואוטומט</li>
@@ -355,16 +382,32 @@
   <!-- PASSED -->
   <section>
     <div class="wrap">
-      <div class="sec-head">
-        <h2>כל טסט שעובר עולה לאינסטגרם</h2>
-        <p class="sub">תלמידים אמיתיים שעברו לאחרונה. לחיצה על כרטיס פותחת את הסרטון.</p>
+      <div class="rev-head">
+        <div class="sec-head">
+          <h2>מה תלמידים כותבים עליו בגוגל</h2>
+          <p class="sub">כמה מהביקורות, מילה במילה.</p>
+        </div>
+        <a class="score" data-google target="_blank" rel="noopener" aria-label="דירוג בגוגל: 5.0 מתוך 5. לכל הביקורות"><span class="score-num" data-f="googleRating">5.0</span><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><small><span data-f="googleCount">21</span> ביקורות · לכולן ←</small></a>
+      </div>
+      <div class="reviews">
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>לפני שהוא מורה נהיגה טוב הוא קודם כל גם בן אדם טוב. מאוד ממליצה עליו, מי שהולך אליו זוכה גם ביחס, גם בגישה וגם להיות תלמיד טוב.</blockquote><figcaption><span class="av" aria-hidden="true">ש</span><span>שירלי<small>ביקורת בגוגל</small></span></figcaption></figure>
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>מורה אש, מלמד ברמה גבוהה. תמיד כיף להגיע לשיעורים איתו, ובזכותו עברתי טסט ראשון.</blockquote><figcaption><span class="av" aria-hidden="true">א</span><span>אוהד ח.<small>ביקורת בגוגל</small></span></figcaption></figure>
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>אייל מורה נהיגה מקצועי, סבלני ואכפתי. הוא מסביר בצורה ברורה, נותן ביטחון על הכביש ותמיד דואג שאבין כל פרט עד הסוף.</blockquote><figcaption><span class="av" aria-hidden="true">ט</span><span>טוהר ג.<small>ביקורת בגוגל</small></span></figcaption></figure>
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>המורה שלי אייל היה מאוד רגוע והסביר הכל פשוט. הוא נתן לי ביטחון, ובזכותו עברתי טסט ראשון. ממליץ מאוד.</blockquote><figcaption><span class="av" aria-hidden="true">K</span><span>Кирилл О.<small>ביקורת בגוגל</small></span></figcaption></figure>
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>מורה מדהים!! קשוב וידע בדיוק איך להסביר כל דבר ונתן לי המון ביטחון על הכביש!</blockquote><figcaption><span class="av" aria-hidden="true">א</span><span>אופיר ב.<small>ביקורת בגוגל</small></span></figcaption></figure>
+        <figure class="rev"><span class="stars" role="img" aria-label="5 מתוך 5 כוכבים"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><blockquote>סבלני, רגוע, מסביר ברור ונותן ביטחון אמיתי על הכביש. כל שיעור באווירה טובה ומרגישים התקדמות כל הזמן.</blockquote><figcaption><span class="av" aria-hidden="true">ש</span><span>שירז א.<small>ביקורת בגוגל</small></span></figcaption></figure>
+      </div>
+      <a class="google-link" data-google target="_blank" rel="noopener">לכל <span data-f="googleCount">21</span> הביקורות בגוגל ←</a>
+
+      <div class="ig-head">
+        <h3>וכל טסט שעובר עולה לאינסטגרם</h3>
+        <p class="sub">תלמידים שעברו לאחרונה. לחיצה על כרטיס פותחת את הסרטון.</p>
       </div>
       <div class="passed">
         <a class="pass" href="https://www.instagram.com/eyal_rubin_driving/reel/Dfew4JZu5rE/" target="_blank" rel="noopener"><span class="q" aria-hidden="true">״</span><p>יש רגע אחד בשיעורי נהיגה ששווה את כל הדרך: הרגע שבו שומעים ׳עברת!׳ והפעם תורן של אופיר ועופרי לחגוג רישיון.</p><div class="who"><div class="av" aria-hidden="true">א</div><div>אופיר ועופרי<small>עברו טסט · לסרטון ←</small></div></div></a>
         <a class="pass" href="https://www.instagram.com/eyal_rubin_driving/reel/De9lfs0uBP-/" target="_blank" rel="noopener"><span class="q" aria-hidden="true">״</span><p>סבטלנה בחרה ללמוד אצלי, והיום התוצאה הגיעה: עברה טסט! היה לי כיף ללוות אותך בדרך לרישיון.</p><div class="who"><div class="av" aria-hidden="true">ס</div><div>סבטלנה<small>עברה טסט · לסרטון ←</small></div></div></a>
         <a class="pass more" href="https://www.instagram.com/eyal_rubin_driving/" target="_blank" rel="noopener"><span class="q" aria-hidden="true">״</span><p>בהיילייט ״עברתם טסט״ יש עוד תלמידים שחוגגים רישיון, ובהיילייט ״הפרגון שלכם״ ההודעות שהם שולחים.</p><div class="who"><div class="av" aria-hidden="true"><svg width="20" height="20"><use href="#i-ig"/></svg></div><div>@eyal_rubin_driving<small>לכל הסיפורים ←</small></div></div></a>
       </div>
-      <a class="google-link" id="googleLink" target="_blank" rel="noopener">לכל הביקורות בגוגל ←</a>
     </div>
   </section>
 
@@ -440,7 +483,9 @@ const INFO = {
   firstName:"אייל",
   about:    "אני מלמד נהיגה נכונה מהיום הראשון: לא רק איך עוברים את הבוחן, אלא איך נוהגים באמת. באינסטגרם ובטיקטוק אני מעלה טיפים מהכביש, ממצבים שמבלבלים בטסט ועד איך בודקים שמן, כי נהג טוב מכיר גם את הרכב שלו.",
   photo:    "eyal-profile.jpg",
-  googleUrl:"",   // קישור לביקורות שלו בגוגל
+  googleUrl:"https://maps.google.com/?cid=4760776851176286112", // הפרופיל שלו בגוגל מפות
+  googleRating:"5.0", // לעדכן מדי פעם לפי גוגל
+  googleCount:"21",
   areas:    ["ראשון לציון", "נס ציונה", "באר יעקב"],
   // מה הוא באמת עושה (למחוק מה שלא מתאים):
   services: ["מתחילים מאפס", "פחד מנהיגה", "מי שנכשל/ה בטסט", "רענון נהיגה לבעלי רישיון", "המרת רישיון מאוטומט לידני"],
@@ -458,8 +503,7 @@ const fillChips = (id, list, ph) => {
 fillChips("services", INFO.services, "[סוגי תלמידים]");
 fillChips("areas", INFO.areas, "[ערים ושכונות]");
 if (INFO.photo) document.getElementById("photo").src = INFO.photo;
-const g = document.getElementById("googleLink");
-if (INFO.googleUrl) g.href = INFO.googleUrl; else g.remove();
+document.querySelectorAll("[data-google]").forEach(a => { if (INFO.googleUrl) a.href = INFO.googleUrl; else a.remove(); });
 
 /* optional fields: when a field is empty, its sentence is dropped instead of showing a placeholder */
 document.querySelectorAll("[data-show]").forEach(el => { if (!INFO[el.dataset.show]) el.remove(); });
